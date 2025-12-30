@@ -2,6 +2,8 @@
 import React from 'react';
 import HomePageBanner from './HomePageBanner';
 import FindInner from './FindInner'
+import Social from './Social'
+import Payment from './Payment'
 
 
 const HomePage = () => {
@@ -18,7 +20,9 @@ const HomePage = () => {
                     </div>    
               <div>
                 <HomePageBanner></HomePageBanner>
-            <FindInner></FindInner>
+                <FindInner></FindInner>
+                <Social></Social>
+                <Payment></Payment>
               </div>
                 
             
