@@ -1,10 +1,11 @@
-import HomePage from "@/components/HomePage";
-import Image from "next/image";
+import HomePage from "../components/HomePage";
 
-export default function Home() {
+const page = () => {
   return (
-<div >
-   <HomePage></HomePage>
+<div>
+  <HomePage></HomePage>
 </div>
-  );
+  )
 }
+
+export default page;

@@ -7,28 +7,28 @@
     },
    {
         "id" : 2,
-    "title": "About Me",
+    "title": "About",
     "path" : "/about",
     "section":"about"
  },
  {
         "id" : 3,
-  "title": "Work",
-  "path" : "/work",
-  "section":"work"
+  "title": "Specialist",
+  "path" : "/specialist",
+  "section":"specialist"
  },
  {
         "id" : 4,
-  "title": "Service",
-  "path" : "/service",
-  "section":"service"
+  "title": "FAQ",
+  "path" : "/faq",
+  "section":"faq"
  },
 
  {
         "id" : 5,
-  "title": "Contact",
-  "path" : "/contact",
-  "section":"contact"
+  "title": "Blog",
+  "path" : "/blog",
+  "section":"blog"
  }
   ]
 }

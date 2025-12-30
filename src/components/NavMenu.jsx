@@ -2,40 +2,38 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import React, { useEffect, useState } from "react";
+import ConsultBtn from "./ConsultBtn";
 
+const NavMenu = () => {
 
-const Navbar = () => {
-
-  const activeColor = "#d62976";
-  const menuColor = "#769656";
-    const pathname = usePathname();
-  const [allSections, setAllSections] = useState([]);
-  
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-  const handleDropdownClose = () => {
-    setIsDropdownOpen(false);
-  }
-
-
-  useEffect(() => {
-    const loadSections = async () => {
+    const activeColor = "#d62976";
+      const menuColor = "#769656";
+        const pathname = usePathname();
+      const [allSections, setAllSections] = useState([]);
+      
+      const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+      const handleDropdownToggle = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+      };
+      const handleDropdownClose = () => {
+        setIsDropdownOpen(false);
+      }
     
-      const sections = await fetch('./navItems.json');
-      const data = await sections.json();
-      console.log(data.allSections)
-      setAllSections(data.allSections);
-    };
-    loadSections();
-  }, []);
-
-  return (
-    <div className="fixed sm:bg-[#E0EDC3] top-0 left-0 right-0 z-50 lg:px-[100px]  rounded-b-xl lg:bg-white/30 backdrop-blur-md border-gray-200 transition-all duration-500">
-     <div className="  bg-[#E0EDC3]  justify-between items-center navbar">
+      useEffect(() => {
+        const loadSections = async () => {
+        
+          const sections = await fetch('./navItems.json');
+          const data = await sections.json();
+          console.log(data.allSections)
+          setAllSections(data.allSections);
+        };
+        loadSections();
+      }, []);
+    
+    return (
+        <div className="fixed sm:bg-[#E0EDC3]  top-7 left-0 right-0 z-49 lg:px-[100px]  rounded-b-xl lg:bg-white/30 backdrop-blur-md border-gray-200 transition-all duration-500">
+     <div className="   bg-faithsmindd_menu_bg text-faithsmindd_menu justify-between items-center navbar">
        <div className="navbar-start ">
         <div className={` ${isDropdownOpen ? 'dropdown' : ''}`}>
           <div onClick={handleDropdownToggle} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -81,7 +79,7 @@ const Navbar = () => {
 }
          
         </div>
-       <Link href="/" className="text-3xl font-bold ml-7">JH</Link> 
+       <Link href="/" className="text-3xl font-bold ml-7">FAITHSMINDD</Link> 
       
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -110,13 +108,11 @@ const Navbar = () => {
 
 
        
-        <div>
-         <button className="btn btn-md hover:scale-110 transition-transform duration-300 text-white bg-black "> <Link href="/contact">Book a Call</Link></button> 
-        </div>
+        <ConsultBtn></ConsultBtn>
       </div>
      </div>
     </div>
-  );
+    );
 };
 
-export default Navbar;
+export default NavMenu;
